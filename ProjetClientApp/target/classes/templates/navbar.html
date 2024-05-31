@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+		<link rel="stylesheet" type="text/css" href="../static/css/style2.css" th:href=@{css/style2.css}>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+      	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+</head>
+<body>
+<div class="container" th:fragment="menu">
+<nav>
+         <div class="logo">
+            Admin
+         </div>
+         <input type="checkbox" id="click">
+         <label for="click" class="menu-btn">
+         <i class="fas fa-bars"></i>
+         </label>
+         <ul>
+            <li ><a onclick="active" th:href=@{listerClient}>Clients</a></li>
+            <li><a onclick="active" th:href=@{listerProduits}>Produits</a></li>
+            <li><a th:href="@{/logout}">LogOut</a></li>
+            
+         </ul>
+      </nav>
+</div>
+</body>
+</html>
