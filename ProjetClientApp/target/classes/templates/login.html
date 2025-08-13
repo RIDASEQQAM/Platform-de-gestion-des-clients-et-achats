@@ -5,15 +5,63 @@
 	<link rel="stylesheet" type="text/css" href="slide navbar style.css">
 	<link href="https://fonts.googleapis.com/css2?family=Jost:wght@500&display=swap" rel="stylesheet">
 <style>
+		/* From AxisClient .io by satyamchaudharydev */ 
+		/* === removing default button style ===*/
+		.button {
+		  margin: 0;
+		  height: auto;
+		  background: transparent;
+		  padding: 0;
+		  border: none;
+		  cursor: pointer;
+		}
+
+		/* button styling */
+		.button {
+		  --border-right: 6px;
+		  --text-stroke-color: rgba(255,255,255,0.6);
+		  --animation-color: #37FF8B;
+		  --fs-size: 2.5em;
+		  margin-bottom: -1rem;
+		  letter-spacing: 3px;
+		  text-decoration: none;
+		  font-size: var(--fs-size);
+		  font-family: "Arial";
+		  position: relative;
+		  text-transform: uppercase;
+		  color: transparent;
+		  -webkit-text-stroke: 1px var(--text-stroke-color);
+		}
+		/* this is the text, when you hover on button */
+		.hover-text {
+		  position: absolute;
+		  box-sizing: border-box;
+		  content: attr(data-text);
+		  color: var(--animation-color);
+		  width: 0%;
+		  inset: 0;
+		  border-right: var(--border-right) solid var(--animation-color);
+		  overflow: hidden;
+		  transition: 0.5s;
+		  -webkit-text-stroke: 1px var(--animation-color);
+		}
+		/* hover */
+		.button:hover .hover-text {
+		  width: 100%;
+		  filter: drop-shadow(0 0 23px var(--animation-color))
+		}
+
 		body {
 			margin: 0;
 			padding: 0;
 			display: flex;
+			flex-direction: column;
 			justify-content: center;
 			align-items: center;
 			min-height: 100vh;
 			font-family: 'Jost', sans-serif;
 			background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e);
+			gap: 2rem;
 		}
 		.main {
 			width: 350px;
@@ -97,6 +145,11 @@
 	</style>
 </head>
 <body>
+	<!-- From AxisClient .io by satyamchaudharydev --> 
+	<button class="button" data-text="Awesome">
+		<span class="actual-text">&nbsp;AxisClient&nbsp;</span>
+		<span aria-hidden="true" class="hover-text">&nbsp;AxisClient&nbsp;</span>
+	</button>
 	<div class="main">  	
 		<input type="checkbox" id="chk" aria-hidden="true">
 
